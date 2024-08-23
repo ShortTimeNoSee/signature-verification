@@ -4,57 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signature Verification</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.6.0/jsrsasign-all-min.js"></script>
 </head>
 <body>
     <h1>Signature Verification</h1>
-    <p>Enter the original message and the base64-encoded signature:</p>
-    <form id="verification-form">
-        <textarea id="message" rows="4" cols="50" placeholder="Enter the original message here"></textarea><br>
-        <textarea id="signature" rows="4" cols="50" placeholder="Enter the base64-encoded signature here"></textarea><br>
-        <button type="button" onclick="verifySignature()">Verify</button>
-    </form>
+    <textarea id="message" placeholder="Paste your message here"></textarea><br>
+    <textarea id="signature" placeholder="Paste the base64-encoded signature here"></textarea><br>
+    <button onclick="verifySignature()">Verify</button>
     <p id="result"></p>
-    <script>
-        // Function to convert base64 to hex
-        function base64ToHex(base64) {
-            const binary = atob(base64);
-            let hex = '';
-            for (let i = 0; i < binary.length; i++) {
-                const byte = binary.charCodeAt(i);
-                hex += ('0' + byte.toString(16)).slice(-2);
-            }
-            return hex.toUpperCase();
-        }
 
-        function verifySignature() {
-            const message = document.getElementById('message').value;
-            const base64Signature = document.getElementById('signature').value;
-
-            // Convert base64 signature to hex
-            const hexSignature = base64ToHex(base64Signature);
-
-            // Your public key (in PEM format)
-            const publicKeyPem = `-----BEGIN PUBLIC KEY-----
-            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2Qs/943VR4wIoj13sD0v
-            JcVfFs/KIO/Jo3OG34erEFxzJ6P4/1t6OVE30DPTBUJPFvi8zwbb3QRzDJSB3KOW
-            lIz9+3V2cyaRb0rLZ2Q/RS1HkgnuSTMbdWmlHm7YU4TzOFLHuELqK5XwgAywvDVy
-            LvQw/1IU0qG+wulOybuW3GvoDPi/u7ArKfn30ZxY/eq0RU357b2p4kXRowi4qzj6
-            zhB2Zidh//GxSqH63AQYfLDac+0lMmQrJI6haFpH7GdU3CoLCVrbURc177JugYp0
-            R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
-            4QIDAQAB
-            -----END PUBLIC KEY-----`;
-
-            // Create a new Signature object for verification
-            const sig = new KJUR.crypto.Signature({ alg: 'SHA256withRSA' });
-            sig.init(publicKeyPem);
-            sig.updateString(message);
-
-            // Verify the signature
-            const isValid = sig.verify(hexSignature);
-
-            document.getElementById('result').innerText = isValid ? 'Signature is valid.' : 'Signature is invalid.';
-        }
-    </script>
+    <script src="verify.js"></script>
 </body>
 </html>
