@@ -16,12 +16,23 @@
     </form>
     <p id="result"></p>
     <script>
+        // Function to convert base64 to hex
+        function base64ToHex(base64) {
+            const binary = atob(base64);
+            let hex = '';
+            for (let i = 0; i < binary.length; i++) {
+                const byte = binary.charCodeAt(i);
+                hex += ('0' + byte.toString(16)).slice(-2);
+            }
+            return hex.toUpperCase();
+        }
+
         function verifySignature() {
             const message = document.getElementById('message').value;
             const base64Signature = document.getElementById('signature').value;
             
-            // Decode base64 signature
-            const hexSignature = KJUR.crypto.Util.b64tohex(base64Signature);
+            // Convert base64 signature to hex
+            const hexSignature = base64ToHex(base64Signature);
             
             // Your public key (in PEM format)
             const publicKeyPem = `-----BEGIN PUBLIC KEY-----
