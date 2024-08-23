@@ -29,6 +29,7 @@
             color: #000;
             position: relative;
             overflow: hidden;
+            box-sizing: border-box; /* Ensures padding is included in width */
         }
         .container::before {
             content: '';
@@ -48,14 +49,15 @@
             font-weight: 700;
         }
         textarea {
-            width: 100%;
+            width: calc(100% - 24px); /* Ensures textareas are centered with padding */
             height: 120px;
-            margin-bottom: 15px;
+            margin: 0 auto 15px;
             padding: 12px;
             border-radius: 8px;
             border: 1px solid #ddd;
             font-size: 16px;
             resize: vertical;
+            display: block;
         }
         button {
             background-color: #FFD700;
@@ -85,7 +87,7 @@
 <body>
     <div class="container">
         <h1>Signature Verification</h1>
-        <textarea id="message" placeholder="Paste the full message here"></textarea><br>
+        <textarea id="message" placeholder="Paste your message here"></textarea><br>
         <textarea id="signature" placeholder="Paste the base64-encoded signature here"></textarea><br>
         <button onclick="verifySignature()">Verify</button>
         <p id="result"></p>
