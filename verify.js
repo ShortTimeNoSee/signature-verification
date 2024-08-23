@@ -39,6 +39,6 @@ R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
         const isValid = publicKey.verify(md.digest().bytes(), signatureBytes);
         document.getElementById('result').innerText = isValid ? 'Signature is valid!' : 'Signature is invalid.';
     } catch (error) {
-        document.getElementById('result').innerText = 'Verification failed. ' + error.message;
+        document.getElementById('result').innerText = 'Signature is invalid!';
     }
 }
