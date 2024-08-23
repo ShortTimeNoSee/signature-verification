@@ -20,7 +20,7 @@
             const message = document.getElementById('message').value;
             const base64Signature = document.getElementById('signature').value;
             
-            // Convert base64 signature to hex
+            // Decode base64 signature
             const hexSignature = KJUR.crypto.Util.b64tohex(base64Signature);
             
             // Your public key (in PEM format)
@@ -33,18 +33,18 @@
             R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
             4QIDAQAB
             -----END PUBLIC KEY-----`;
-            
-            // Create a new RSAPublicKey instance
+
+            // Create a new RSA public key object
             const publicKey = new KJUR.crypto.PublicKey(publicKeyPem);
             
-            // Create a new Signature instance
+            // Create a new Signature object for verification
             const sig = new KJUR.crypto.Signature({ alg: 'SHA256withRSA' });
             sig.init(publicKey);
             sig.updateHex(KJUR.crypto.Util.hexEncode(message));
-            
+
             // Verify the signature
             const isValid = sig.verify(hexSignature);
-            
+
             document.getElementById('result').innerText = isValid ? 'Signature is valid.' : 'Signature is invalid.';
         }
     </script>
