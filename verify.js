@@ -19,14 +19,26 @@ R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
         return;
     }
 
-    const pki = forge.pki;
-    const md = forge.md.sha256.create();
+    try {
+        const pki = forge.pki;
+        const md = forge.md.sha256.create();
+        const publicKey = pki.publicKeyFromPem(publicKeyPem);
 
-    const publicKey = pki.publicKeyFromPem(publicKeyPem);
-    const signature = forge.util.decode64(base64Signature);
+        // Decode base64 signature
+        const signatureBytes = forge.util.decode64(base64Signature);
 
-    md.update(message, 'utf8');
+        // Check if the message or signature is empty
+        if (!message || !base64Signature) {
+            throw new Error('Message or signature is empty.');
+        }
 
-    const isValid = publicKey.verify(md.digest().bytes(), signature);
-    document.getElementById('result').innerText = isValid ? 'Signature is valid!' : 'Signature is invalid.';
+        // Update message digest
+        md.update(message, 'utf8');
+
+        // Verify the signature
+        const isValid = publicKey.verify(md.digest().bytes(), signatureBytes);
+        document.getElementById('result').innerText = isValid ? 'Signature is valid!' : 'Signature is invalid.';
+    } catch (error) {
+        document.getElementById('result').innerText = 'Verification failed. ' + error.message;
+    }
 }
