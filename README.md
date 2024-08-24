@@ -17,7 +17,7 @@ This web-based tool verifies the authenticity of messages signed with a private 
 4. Click "Verify" to check the message's authenticity.
 
 ### Example
-----
+<hr />
 <div style="color: black; background-color: #f80; padding: 0.1em;">Hello, GitHib!\
 This message is from Nicholas A. Thompson, sent at or very close to 06:15 UTC to GitHub users.
  
@@ -30,7 +30,7 @@ To verify this message was indeed sent by Nicholas Thompson, please follow these
 
 This uses cryptographic signing to ensure that the message could only have been sent by someone with access to my private key. Any tampering with the message or signature will cause the verification to fail, providing a reliable check of authenticity.</div>
 <div style="color: black; background-color: #80f; padding: 0.1em;">exTt0MRrhS++vab17VT654SomOWonYAt/NOmvaG/o6aSsMxEU53a16wGdrT0Ts5591eRQg00xpqEbkID8+rwZDQHJ5ZLYsVuRV3p4yZ3lUSHxhW51igJlxw7MsFTztyQDITG3PbEjJXtRXl5KTrdKvDm00rmg2W3roungPCI01586I86AOmlmX3/bDgXN4DKzKhGyULVBHwpgKP1CTz0EPcV8dPdXcn3mzLDrXiUh8BGpvZIP0hD8GMA2Sv8vFJ6sIilefy98ro13t2kZhCkE9qt9dU1e3N9ElvEQO8IMWnm7ILQMLjMnhGp8s5qq5aJzkskOCLoQvFfODM1h9bsKg==</div>
-----
+<hr />
 Instructions:
 - Open the [Signature Verification Tool](https://shorttimenosee.github.io/signature-verification)
 - Message: Copy everything in orange from "Hello, Github!" up to (including) "providing a reliable check of authenticity." Paste this into the first text box on the signature verification tool.
