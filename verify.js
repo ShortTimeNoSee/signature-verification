@@ -1,7 +1,7 @@
 // verify.js
 function verifySignature() {
-    const message = document.getElementById('message').value;
-    const base64Signature = document.getElementById('signature').value;
+    const message = document.getElementById('message').value.trim();
+    const base64Signature = document.getElementById('signature').value.trim();
 
     const publicKeyPem = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2Qs/943VR4wIoj13sD0v
