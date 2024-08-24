@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signature Verification</title>
-    <!-- Include forge library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
     <style>
         body {
@@ -49,7 +48,7 @@
             font-weight: 700;
         }
         textarea {
-            width: calc(100% - 24px); /* Ensures textareas are centered with padding */
+            width: calc(100% - 24px);
             height: 120px;
             margin: 0 auto 15px;
             padding: 12px;
@@ -76,6 +75,24 @@
             margin-top: 20px;
             font-weight: bold;
             font-size: 18px;
+            min-height: 50px;
+            position: relative;
+        }
+        .valid-animation {
+            animation: validAnimation 1s ease-out;
+        }
+        .invalid-animation {
+            animation: invalidAnimation 1s ease-out;
+        }
+        @keyframes validAnimation {
+            0% { color: #4CAF50; }
+            50% { color: #000; }
+            100% { color: #4CAF50; }
+        }
+        @keyframes invalidAnimation {
+            0% { color: #F44336; }
+            50% { color: #000; }
+            100% { color: #F44336; }
         }
         .footer {
             margin-top: 30px;
@@ -96,7 +113,6 @@
             <p>Copyright Nicholas A. Thompson</p>
         </div>
     </div>
-    <!-- Include your verification script -->
     <script src="verify.js"></script>
 </body>
 </html>
