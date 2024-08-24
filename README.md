@@ -19,7 +19,8 @@ This web-based tool verifies the authenticity of messages signed with a private 
 ### Example
 <hr />
 
-<div style="color: black; background-color: #f80; padding: 0.1em;">Hello, GitHib!\
+<div style="color: black; background-color: #f80; padding: 0.1em;">
+Hello, GitHib!\
 This message is from Nicholas A. Thompson, sent at or very close to 06:15 UTC to GitHub users.
  
 To verify this message was indeed sent by Nicholas Thompson, please follow these steps:
