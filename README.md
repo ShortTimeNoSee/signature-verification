@@ -23,7 +23,7 @@ This message is from Nicholas A. Thompson, sent at or very close to 06:15 UTC to
  
 To verify this message was indeed sent by Nicholas Thompson, please follow these steps:
 
-\- Copy the entire message (excluding the encryption signature below, but including these instructions) and paste it into the first text box on my signature verification tool: https://shorttimenosee.github.io/signature-verification/\
+\- Copy the entire message (excluding the encryption signature below, but including these instructions) and paste it into the first text box on my signature verification tool: https://shorttimenosee.github.io/signature-verification/.\
 \- Copy the encryption signature provided and paste it into the second text box.\
 \- Click "Verify."
 
