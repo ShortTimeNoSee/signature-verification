@@ -31,9 +31,9 @@ This uses cryptographic signing to ensure that the message could only have been 
 v+qHglqwnlrsvZEk0rk7qscy2h6FgIoGhu5NjkvXZbsxwA5r6FPlpHEaSbfK2pohw+Np8PUYn4iNAyQppKDYOxjiuECnvRWkf3HNqjYIOz7J52Ad0POpElNF41uz2abRmHth6ulY7JM7qYD2IH08Lm5m8Yl3WlaQ801sANkhqxnfpREHPAF9ub3ocfZHrLxNxIsLQBm0DCnO0nGlibuGRFGkQX+rLlo9connA6wmCihvmwZjgzb5X7I0RkKDlwPIfWzKSOOQ+aKaEJZNsWWYui4mT7s/uBYwux2Y6wS6aiPOaZIOK3rRBeAzFBStHdgmi2VrZJuv2kRklkhd1pKj8w==<hr />
 
 Instructions:
-- Open the [here](https://shorttimenosee.github.io/signature-verification/).
+- Open the [signature verification tool](https://shorttimenosee.github.io/signature-verification/).
 - Message: Copy everything from "Hello, Github!" up to (including) "providing a reliable check of authenticity." Paste this into the first text box on the signature verification tool.
-- Key: Copy everything from "exTt0MRrhS++vab17VT654SomOWonYAt/NOmvaG/o6aSsMxEU53a16wGdrT0Ts5591eRQg00xpqEbkID8..." to the end of the key. Paste this into the second text box.
+- Key: Copy everything from "v+qHglqwnlrsvZEk0rk7qscy2h6FgIoGhu5NjkvXZbsxwA5r6FPlpHEaSbfK2pohw+..." to the end of the key. Paste this into the second text box.
 - Click Verify.
 
 ## Code Details
