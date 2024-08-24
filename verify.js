@@ -13,7 +13,6 @@ R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
 4QIDAQAB
 -----END PUBLIC KEY-----`;
 
-    // Ensure forge library is loaded
     if (typeof forge === 'undefined') {
         alert('Forge library not loaded.');
         return;
@@ -23,22 +22,25 @@ R2rRwPsdzieD8INjVlQ8AjjnPDyiz+4goh1/6mYdJkUmu7z2LLFMnn3RcNWLgr8P
         const pki = forge.pki;
         const md = forge.md.sha256.create();
         const publicKey = pki.publicKeyFromPem(publicKeyPem);
-
-        // Decode base64 signature
         const signatureBytes = forge.util.decode64(base64Signature);
 
-        // Check if the message or signature is empty
         if (!message || !base64Signature) {
             throw new Error('Message or signature is empty.');
         }
 
-        // Update message digest
         md.update(message, 'utf8');
-
-        // Verify the signature
         const isValid = publicKey.verify(md.digest().bytes(), signatureBytes);
-        document.getElementById('result').innerText = isValid ? 'Signature is valid!' : 'Signature is invalid.';
+
+        const resultElement = document.getElementById('result');
+        if (isValid) {
+            resultElement.innerText = 'Signature is valid!';
+            resultElement.className = 'valid-animation';
+        } else {
+            resultElement.innerText = 'Signature is invalid!';
+            resultElement.className = 'invalid-animation';
+        }
     } catch (error) {
         document.getElementById('result').innerText = 'Signature is invalid!';
+        document.getElementById('result').className = 'invalid-animation';
     }
 }
